@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+//https://codingbeautydev.com/blog/react-get-input-value-on-button-click/ first resourse
+
+import { useState } from "react";
+
 
 function App() {
+
+  const [input,setInput]=useState("");
+
+  const [update,setUpdate]=useState();
+
+  const handleChange =(element)=>{
+    setInput(element.target.value)
+
+  }
+
+  const handleClick = ()=>{
+    setUpdate(input)
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   
+    <input type="text"
+    name="input"
+    onChange ={handleChange}
+    value={input}
+     />
+     <p>{update}</p>
+
+     <button onClick={handleClick}>Submit</button>
+
     </div>
   );
 }
