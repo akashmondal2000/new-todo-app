@@ -28,7 +28,7 @@ function App() {
     onChange ={handleChange}
     value={input}
      />
-     <p>{update}</p>
+     <h1>{update}</h1>
 
      <button onClick={handleClick}>Submit</button>
 
